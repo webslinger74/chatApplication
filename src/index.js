@@ -1,17 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './App.css';
+import Login from '../src/components/auth/Login';
+import Register from '../src/components/auth/Register';
+import 'semantic-ui-css/semantic.min.css';
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { UserProvider } from './context/user_context';
+import { ChannelProvider } from './context/channel_context';
+
+
+
+const Root = () => (
+    <Router>
+        <Switch>
+            <Route exact path="/" component={App} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+        </Switch>
+    </Router>
+)
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+         <UserProvider>
+             <ChannelProvider>
+                   <Root />
+                   </ChannelProvider>
+           
+         </UserProvider>
+                , document.getElementById('root'));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

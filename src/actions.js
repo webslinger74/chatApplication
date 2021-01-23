@@ -1,0 +1,4 @@
+export const GET_GLOBAL_USER = 'GET_GLOBAL_USER'
+export const SET_GLOBAL_USER = 'SET_GLOBAL_USER'
+export const CLEAR_GLOBAL_USER = 'CLEAR_GLOBAL_USER'
+export const SET_CHANNEL = 'SET_CHANNEL'
