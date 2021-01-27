@@ -121,7 +121,7 @@ const Register = () => {
                   ))}
          
                      
-                      <Message>Already a user<Link to="/login"></Link></Message>
+                      <Message><Link to="/login">Already a user</Link></Message>
                   </Grid.Column>
 
               </Grid>
